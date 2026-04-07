@@ -54,7 +54,7 @@ h3,.h3{font-family:'Quicksand',sans-serif;font-weight:700;}
 button{outline:none;border:none;}
 *:focus{outline:none;}
 
-.hero-content{position:relative;z-index:2;max-width:600px;padding:60px 32px 180px 32px;text-align:left;}
+.hero-content{position:relative;z-index:2;max-width:600px;padding:60px 32px 180px 16px;text-align:left;}
 /* ===== WAVES ===== */
 .wave{line-height:0;display:block;overflow:hidden;margin-bottom:-1px;}
 .wave svg{width:100%;display:block;}
@@ -625,7 +625,7 @@ button{outline:none;border:none;}
       <img class="hero-blob-photo" id="heroBlobPhoto" src="" alt="" style="display:none;"/>
       <div class="hero-blob-overlay"></div>
     </div>
-    <div style="background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border-radius:16px;padding:7px 14px;text-align:center;max-width:160px;margin:0 auto;">
+    <div style="background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border-radius:16px;padding:7px 14px;text-align:center;max-width:160px;margin:0 auto;margin:0 auto;">
       <div style="font-size:8px;font-weight:700;color:#F9C832;text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px;font-family:'Quicksand',sans-serif;">🔔 Novinka</div>
       <div id="heroNewsTitle" style="font-size:11px;font-weight:700;color:#fff;line-height:1.3;font-family:'Quicksand',sans-serif;"></div>
     </div>
@@ -807,7 +807,7 @@ button{outline:none;border:none;}
       <span class="label" style="color:#C49000;">Aktuality</span>
       <h2>Novinky v škôlke</h2>
     </div>
-    <a href="noviny.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;">Všetky novinky →</a>
+    <a href="novinky.html" class="btn btn-primary" style="font-size:13px;padding:10px 22px;">Všetky novinky →</a>
   </div>
   <div class="news-grid fade-in" id="cms-news"></div>
 </section>
@@ -885,11 +885,11 @@ button{outline:none;border:none;}
             <div class="contact-sub">kliknutím zavoláte</div>
           </div>
       </a>
-      <a class="contact-card green" href="mailto:info@skolka-vcielka.sk">
+      <a class="contact-card green" href="/cdn-cgi/l/email-protection#d4bdbab2bb94a7bfbbb8bfb5f9a2b7bdb1b8bfb5faa7bf">
           <div class="contact-icon">✉️</div>
           <div class="contact-body">
             <div class="contact-label">E-mail</div>
-            <div class="cms-email contact-value">info@skolka-vcielka.sk</div>
+            <div class="cms-email contact-value"><span class="__cf_email__" data-cfemail="472e29212807342c282b2c266a31242e222b2c2669342c">[email&#160;protected]</span></div>
             <div class="contact-sub">kliknutím napíšete</div>
           </div>
       </a>
@@ -947,7 +947,7 @@ button{outline:none;border:none;}
       <h4>Kontakt</h4>
       <span class="footer-link">Sečovská 144/3, Ružinov</span>
       <a href="tel:0918607935" class="footer-link">0918 607 935</a>
-      <a href="mailto:info@skolka-vcielka.sk" class="footer-link">info@skolka-vcielka.sk</a>
+      <a href="/cdn-cgi/l/email-protection#6e070008012e1d050102050f43180d070b02050f401d05" class="footer-link"><span class="__cf_email__" data-cfemail="6f060109002f1c040003040e42190c060a03040e411c04">[email&#160;protected]</span></a>
       <span class="footer-link">Po–Pia: 7:00 – 17:00</span>
     </div>
   </div>
@@ -994,7 +994,7 @@ button{outline:none;border:none;}
   <button class="lightbox-next" id="lbNext">&#8250;</button>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.addEventListener('DOMContentLoaded',function(){
 // ===== MOBILE MENU =====
 const burger=document.getElementById('burger');
@@ -1446,16 +1446,4 @@ document.addEventListener('DOMContentLoaded', function(){
   const lbClose = document.getElementById('lbClose');
   const lb = document.getElementById('lightbox');
   if(lbPrev) lbPrev.addEventListener('click', e=>{e.stopPropagation();lbGo(-1);});
-  if(lbNext) lbNext.addEventListener('click', e=>{e.stopPropagation();lbGo(1);});
-  if(lbClose) lbClose.addEventListener('click', closeLightbox);
-  if(lb) lb.addEventListener('click', e=>{if(e.target===lb)closeLightbox();});
-  // gallery items click
-  document.querySelectorAll('.gallery-item').forEach((item,i)=>{
-    item.addEventListener('click',()=>openLightbox(i));
-  });
-});
-
-</script>
-
-</body>
-</html>
+  if(lbNext) lbNext
