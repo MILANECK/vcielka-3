@@ -524,7 +524,7 @@ async function removeActivityPhoto(id) {
 
 // ===== NEWS =====
 async function loadNews() {
-  const { data } = await db.from('news').select('*').order('created_at', { ascending: false });
+  const { data } = await db.from('news').select('id,title,excerpt,content,photo_url,photo2_url,photo3_url,color,published_at,created_at').order('created_at', { ascending: false });
   const list = document.getElementById('newsList');
   list.innerHTML = (data||[]).map(n => `
     <div class="news-item">
@@ -543,10 +543,22 @@ async function loadNews() {
       <div class="field"><label>Titulok</label><input type="text" value="${n.title}" onchange="updateNews(${n.id},'title',this.value)"/></div>
       <div class="field"><label>Krátky popis</label><input type="text" value="${n.excerpt||''}" onchange="updateNews(${n.id},'excerpt',this.value)"/></div>
       <div class="field"><label>Celý článok (text popupu)</label><textarea style="min-height:120px;" onchange="updateNews(${n.id},'content',this.value)">${n.content||''}</textarea></div>
-      <div class="field"><label>Fotografía novinky</label>
+      <div class="field"><label>📸 Hlavná fotografia</label>
         <div class="img-upload" style="padding:14px;">
-          <input type="file" accept="image/*" onchange="uploadNewsPhoto(this,${n.id})"/>
-          <div>📸 ${n.photo_url ? 'Zmeniť fotografiu' : 'Nahrať fotografiu'}</div>
+          <input type="file" accept="image/*" onchange="uploadNewsPhoto(this,${n.id},'photo_url')"/>
+          <div>📸 ${n.photo_url ? '<img src="'+n.photo_url+'" style="height:60px;border-radius:8px;margin-top:6px;"/> Zmeniť' : 'Nahrať hlavnú fotografiu'}</div>
+        </div>
+      </div>
+      <div class="field"><label>📸 Fotografia 2 (voliteľná)</label>
+        <div class="img-upload" style="padding:14px;">
+          <input type="file" accept="image/*" onchange="uploadNewsPhoto(this,${n.id},'photo_url_2')"/>
+          <div>📸 ${n.photo_url_2 ? '<img src="'+n.photo_url_2+'" style="height:60px;border-radius:8px;margin-top:6px;"/> Zmeniť' : 'Nahrať fotografiu 2'}</div>
+        </div>
+      </div>
+      <div class="field"><label>📸 Fotografia 3 (voliteľná)</label>
+        <div class="img-upload" style="padding:14px;">
+          <input type="file" accept="image/*" onchange="uploadNewsPhoto(this,${n.id},'photo_url_3')"/>
+          <div>📸 ${n.photo_url_3 ? '<img src="'+n.photo_url_3+'" style="height:60px;border-radius:8px;margin-top:6px;"/> Zmeniť' : 'Nahrať fotografiu 3'}</div>
         </div>
       </div>
       <div class="field"><label>Farba karty</label>
@@ -603,13 +615,14 @@ async function deleteNews(id) {
   loadNews();
 }
 
-async function uploadNewsPhoto(input, id) {
+async function uploadNewsPhoto(input, id, field) {
+  if(!field) field = "photo_url";
   const file = input.files[0]; if (!file) return;
   const path = `news/${id}_${Date.now()}.${file.name.split('.').pop()}`;
   const { error } = await db.storage.from('vcielka').upload(path, file, { upsert: true });
   if (error) { toast('Chyba nahrávania', 'error'); return; }
   const { data: { publicUrl } } = db.storage.from('vcielka').getPublicUrl(path);
-  await db.from('news').update({ photo_url: publicUrl }).eq('id', id);
+  await db.from('news').update({ [field]: publicUrl }).eq('id', id);
   toast('✅ Fotografia nahratá!');
   loadNews();
 }
