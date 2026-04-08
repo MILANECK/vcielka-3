@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Novinka – Materská škola Včielka</title>
+<title>Novinka – Včielka</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <link rel="icon" type="image/png" href="vcielka_logo2.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Quicksand:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
@@ -142,7 +142,7 @@ async function loadArticle() {
     }
 
     // Set page title
-    document.title = data.title + ' – Materská škola Včielka';
+    document.title = data.title + ' – Včielka';
 
     // Collect photos for lightbox
     lbPhotos = [data.photo_url, data.photo2_url, data.photo3_url].filter(Boolean);
