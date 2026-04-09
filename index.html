@@ -366,7 +366,8 @@ button{outline:none;border:none;}
   .nav-links{display:none;}
   .nav-burger{display:flex;}
   .hero{flex-direction:column;padding:40px 20px 32px;text-align:left;}
-  .hero-content{padding:40px 20px 160px 20px!important;margin-left:0!important;max-width:100%!important;}
+  .hero-wrapper{padding:0 20px!important;}
+  .hero-content{padding:32px 0 220px 0!important;margin-left:0!important;max-width:100%!important;}
   .hero-badge,.hero h1,.hero-desc{text-align:left;}
   .hero-btns{justify-content:flex-start;}
   .hero-img{display:none;}
@@ -483,15 +484,16 @@ button{outline:none;border:none;}
 .hero-news-tag{font-family:'Quicksand',sans-serif;font-size:9px;font-weight:700;color:#F9C832;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;display:block;}
 .hero-news-title{font-family:'Quicksand',sans-serif;font-size:17px;font-weight:700;color:#fff;line-height:1.4;text-shadow:0 1px 8px rgba(0,0,0,.6);display:block;}
 @media(max-width:900px){
-  .hero-news-blob{bottom:80px;right:16px;}
-  .hero-blob-circle{width:180px;height:180px;}
-  .hero-blob-text{max-width:150px;}
-  .hero-news-title{font-size:14px;}
+  .hero-news-blob{bottom:20px;right:12px;}
+  .hero-blob-circle{width:130px;height:130px;}
+  .hero-blob-text{max-width:140px;}
+  .hero-news-title{font-size:12px;}
 }
 @media(max-width:600px){
-  .hero-news-blob{bottom:75px;right:10px;}
-  .hero-blob-circle{width:140px;height:140px;}
-  .hero-blob-text{max-width:130px;}
+  .hero-news-blob{bottom:15px;right:10px;}
+  .hero-blob-circle{width:110px;height:110px;}
+  .hero-blob-text{max-width:120px;}
+  .hero-news-title{font-size:11px;}
 }
 
 
@@ -501,12 +503,12 @@ button{outline:none;border:none;}
 .gallery-popup-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-shrink:0;}
 .gallery-popup-header h2{font-family:'Quicksand',sans-serif;font-size:18px;font-weight:700;color:#fff;}
 .gallery-popup-close{background:rgba(255,255,255,.25);color:#fff;border:2px solid rgba(255,255,255,.4);border-radius:50%;width:44px;height:44px;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.gallery-popup-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;overflow-y:auto;flex:1;padding-bottom:10px;}
+.gallery-popup-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;overflow-y:auto;flex:1;padding-bottom:10px;align-content:start;}
 .gallery-popup-grid::-webkit-scrollbar{width:6px;}
 .gallery-popup-grid::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:3px;}
-.gallery-popup-item{border-radius:16px;overflow:hidden;aspect-ratio:1;cursor:zoom-in;transition:transform .2s;}
+.gallery-popup-item{border-radius:16px;overflow:hidden;aspect-ratio:1;cursor:zoom-in;transition:transform .2s;height:0;padding-bottom:100%;position:relative;}
 .gallery-popup-item:hover{transform:scale(1.03);}
-.gallery-popup-item img{width:100%;height:100%;object-fit:cover;}
+.gallery-popup-item img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;}
 @media(max-width:600px){.gallery-popup-grid{grid-template-columns:repeat(2,1fr);gap:8px;}
 .gallery-popup-item{aspect-ratio:1;overflow:hidden;height:auto;}
 .gallery-popup-item img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;top:0;left:0;}
@@ -754,7 +756,7 @@ button{outline:none;border:none;}
   <img class="hero-bee-deco" src="https://www.skolka-vcielka.sk/images/header_imgs/vcela2.png" alt=""/>
   <img class="hero-bee-deco2" src="https://www.skolka-vcielka.sk/images/header_imgs/vcela3.png" alt=""/>
   <!-- content -->
-  <div style="width:100%;max-width:1100px;margin:0 auto;padding:0 0 0 48px;">
+  <div style="width:100%;max-width:1100px;margin:0 auto;padding:0 0 0 48px;" class="hero-wrapper">
   <div class="hero-content fade-in">
     <div class="hero-badge">🐝 Ružinov, Bratislava</div>
     <h1 id="cms-hero-title">Kde detičky <em>rastú</em><br>a objavujú svet</h1>
