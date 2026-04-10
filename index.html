@@ -710,12 +710,27 @@ footer.footer .footer-inner{position:relative;z-index:2;}
 /* Stats bar, hero, cennik, footer = NO grain (no background-image added) */
 /* Content always on top via section-inner z-index already in CSS */
 
-/* ===== GRAIN TEXTURE ===== */
-.bg-blue-pale{background-image:url("7547.jpg");background-color:var(--blue-pale);background-blend-mode:multiply;background-size:400px 400px;}
-.bg-warm{background-image:url("7547.jpg");background-color:var(--warm-white);background-blend-mode:multiply;background-size:400px 400px;}
-.bg-sky{background-image:url("7547.jpg");background-color:var(--blue-sky);background-blend-mode:multiply;background-size:400px 400px;}
-.bg-green-pale{background-image:url("7547.jpg");background-color:var(--green-pale);background-blend-mode:multiply;background-size:400px 400px;}
 /* Stats bar, hero, cennik, footer = NO grain */
+
+/* ===== GRAIN TEXTURE ===== */
+/* Cut point: below the wave after stats bar. Sections get grain via ::before */
+#sluzby::before, .bg-warm::before, .bg-sky::before, .bg-green-pale::before,
+section#aktuality::before, section#kontakt::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:url("7547.jpg");
+  background-size:400px 400px;
+  opacity:0.08;
+  pointer-events:none;
+  z-index:0;
+  mix-blend-mode:multiply;
+}
+/* Ensure content stays above grain */
+#sluzby .section-inner, .bg-warm .section-inner, .bg-sky .section-inner,
+.bg-green-pale .section-inner, section#aktuality .section-inner,
+section#kontakt .section-inner { position:relative; z-index:1; }
+/* Wave SVGs between sections also get grain to avoid clean stripes */
 
 /* scroll fade-in */
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
