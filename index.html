@@ -717,24 +717,17 @@ footer.footer .footer-inner{position:relative;z-index:2;}
   position:fixed;
   top:0;left:0;right:0;bottom:0;
   pointer-events:none;
-  z-index:9999;
+  z-index:1;
   background-image:url("7547.jpg");
   background-size:400px 400px;
   opacity:0.30;
   mix-blend-mode:linear-burn;
 }
+/* Everything sits in its own stacking context above grain */
+.nav,.hero,.stats,.section,.gallery-section,.footer{isolation:isolate;position:relative;z-index:2;}
+.news-popup-overlay,.gallery-popup-overlay,.lightbox{isolation:isolate;z-index:9999!important;}
 
 
-/* Content above grain */
-.nav, .hero, .stats, .section-inner, .gallery-inner, .gallery-header,
-.gallery-track, .footer-inner, section#cennik .section-inner,
-.news-popup-overlay, .gallery-popup-overlay, .lightbox,
-img, button, a, .btn, .news-card, .service-card, .testi-card,
-.why-item, .price-card, .contact-card, .z-item, .tl-item,
-.hero-content, .hero-news-blob, .about-teaser, .about-text {
-  position:relative;
-  z-index:10000;
-}
 
 /* scroll fade-in */
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
