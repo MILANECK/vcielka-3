@@ -171,7 +171,7 @@ button{outline:none;border:none;}
 /* ===========================
    STATS
 =========================== */
-.stats{background-image:none!important;background-color:#FFFDF8;display:flex;flex-wrap:wrap;justify-content:center;}
+.stats{background:#FFFDF8;display:flex;flex-wrap:wrap;justify-content:center;}
 .stat{flex:1;min-width:100px;padding:14px 16px;text-align:center;border-right:1px solid rgba(0,0,0,.06);}
 .stat:last-child{border-right:none;}
 .stat-num{font-family:'Nunito',sans-serif;font-size:26px;font-weight:700;color:var(--blue);}
@@ -684,51 +684,6 @@ button{outline:none;border:none;}
 .about-text-inner p{margin-bottom:12px;}
 .about-text-inner p:last-child{margin-bottom:0;}
 
-
-
-
-
-
-
-
-
-/* All section content sits above grain */
-
-
-/* Content sits above grain - only needed for cennik, footer, popups */
-.nav{position:relative;z-index:10;}
-section#cennik .section-inner,
-section#cennik .section-center,
-section#cennik .pricing-grid{position:relative;z-index:2;}
-footer.footer .footer-inner{position:relative;z-index:2;}
-.news-popup-overlay,.gallery-popup-overlay,.lightbox{z-index:9999!important;}
-
-
-.bg-warm{background:var(--warm-white);}
-.bg-sky{background:var(--blue-sky);}
-.bg-green-pale{background:var(--green-pale);}
-/* Stats bar, hero, cennik, footer = NO grain (no background-image added) */
-/* Content always on top via section-inner z-index already in CSS */
-
-/* Stats bar, hero, cennik, footer = NO grain */
-
-/* ===== GRAIN TEXTURE ===== */
-.grain-layer{
-  position:fixed;
-  top:0;left:0;right:0;bottom:0;
-  pointer-events:none;
-  z-index:1;
-  background-image:url("7547.jpg");
-  background-size:400px 400px;
-  opacity:0.30;
-  mix-blend-mode:linear-burn;
-}
-/* Everything sits in its own stacking context above grain */
-.nav,.hero,.stats,.section,.gallery-section,.footer{isolation:isolate;position:relative;z-index:2;}
-.news-popup-overlay,.gallery-popup-overlay,.lightbox{isolation:isolate;z-index:9999!important;}
-
-
-
 /* scroll fade-in */
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
 .fade-in.visible{opacity:1;transform:translateY(0);}
@@ -834,9 +789,6 @@ footer.footer .footer-inner{position:relative;z-index:2;}
 </div>
 </div>
 
-<!-- grain starts here -->
-<div style="position:relative;">
-<div class="grain-layer"></div>
 <!-- wave stats→services -->
 <svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,40 C280,5 600,55 900,22 C1100,5 1300,46 1440,28 L1440,55 L0,55Z" fill="#D9EFFF"/>
@@ -877,7 +829,7 @@ footer.footer .footer-inner{position:relative;z-index:2;}
 </section>
 
 <!-- wave services→why -->
-<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
+<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#D9EFFF;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,26 C350,55 700,0 1050,34 C1250,52 1380,12 1440,22 L1440,55 L0,55Z" fill="#FFFDF8"/>
 </svg>
 
@@ -954,7 +906,7 @@ footer.footer .footer-inner{position:relative;z-index:2;}
 </section>
 
 <!-- wave schedule→gallery -->
-<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
+<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#E2F5EC;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,35 C400,5 800,55 1200,22 C1340,8 1410,40 1440,32 L1440,55 L0,55Z" fill="#D9EFFF"/>
 </svg>
 
@@ -998,7 +950,7 @@ footer.footer .footer-inner{position:relative;z-index:2;}
 </section>
 
 <!-- wave gallery→testimonials -->
-<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
+<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#D9EFFF;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,18 C250,55 600,0 900,34 C1100,55 1350,10 1440,24 L1440,55 L0,55Z" fill="#C8E6FA"/>
 </svg>
 
@@ -1021,7 +973,7 @@ footer.footer .footer-inner{position:relative;z-index:2;}
 </section>
 
 <!-- wave testimonials→news -->
-<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
+<svg class="wave" viewBox="0 0 1440 55" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#C8E6FA;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,30 C300,5 700,55 1100,18 C1300,4 1400,40 1440,30 L1440,55 L0,55Z" fill="#FFFDF8"/>
 </svg>
 
@@ -1119,7 +1071,7 @@ footer.footer .footer-inner{position:relative;z-index:2;}
             <div class="contact-sub">kliknutím zavoláte</div>
           </div>
       </a>
-      <a class="contact-card green" href="/cdn-cgi/l/email-protection#a0c9cec6cfe0d3cbcfcccbc18dd6c3c9c5cccbc18ed3cb">
+      <a class="contact-card green" href="mailto:info@skolka-vcielka.sk">
           <div class="contact-icon">✉️</div>
           <div class="contact-body">
             <div class="contact-label">E-mail</div>
@@ -1147,9 +1099,8 @@ footer.footer .footer-inner{position:relative;z-index:2;}
   </div></div>
 </section>
 
-</div><!-- end grain -->
 <!-- wave contact→footer -->
-<svg class="wave" viewBox="0 0 1440 44" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#FFFDF8;" xmlns="http://www.w3.org/2000/svg">
+<svg class="wave" viewBox="0 0 1440 44" preserveAspectRatio="none" style="display:block;margin-bottom:-2px;background:#D9EFFF;" xmlns="http://www.w3.org/2000/svg">
   <path d="M0,20 C300,44 700,0 1100,30 C1300,42 1420,10 1440,18 L1440,46 L0,46Z" fill="#0D3D6E"/>
 </svg>
 
@@ -1182,7 +1133,7 @@ footer.footer .footer-inner{position:relative;z-index:2;}
       <h4>Kontakt</h4>
       <span class="footer-link">Sečovská 144/3, Ružinov</span>
       <a href="tel:0918607935" class="footer-link">0918 607 935</a>
-      <a href="/cdn-cgi/l/email-protection#8ce5e2eae3ccffe7e3e0e7eda1faefe5e9e0e7eda2ffe7" class="footer-link"><span class="__cf_email__" data-cfemail="87eee9e1e8c7f4ece8ebece6aaf1e4eee2ebece6a9f4ec">[email&#160;protected]</span></a>
+      <a href="mailto:info@skolka-vcielka.sk" class="footer-link">info@skolka-vcielka.sk</a>
       <span class="footer-link">Po–Pia: 7:00 – 17:00</span>
     </div>
   </div>
@@ -1230,7 +1181,7 @@ footer.footer .footer-inner{position:relative;z-index:2;}
   <button class="lightbox-next" id="lbNext">&#8250;</button>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 document.addEventListener('DOMContentLoaded',function(){
 // ===== MOBILE MENU =====
 const burger=document.getElementById('burger');
@@ -1686,4 +1637,11 @@ document.addEventListener('DOMContentLoaded', function(){
   const lbNext = document.getElementById('lbNext');
   const lbClose = document.getElementById('lbClose');
   const lb = document.getElementById('lightbox');
-  if(lbPrev) lbPrev.addEventListener('cli
+  if(lbPrev) lbPrev.addEventListener('click', e=>{e.stopPropagation();lbGo(-1);});
+  if(lbNext) lbNext.addEventListener('click', e=>{e.stopPropagation();lbGo(1);});
+  if(lb) lb.addEventListener('click',e=>{if(e.target===lb)closeLightbox();});
+  if(lbClose) lbClose.addEventListener('click',closeLightbox);
+});
+</script>
+</body>
+</html>
