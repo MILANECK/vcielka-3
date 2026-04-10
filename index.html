@@ -16,7 +16,7 @@
 /* ===== RESET & BASE ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:#D9EFFF;color:#1a1a1a;overflow-x:hidden;font-size:16px;}
+body{font-family:'Inter',sans-serif;background:#D9EFFF;color:#1a1a1a;overflow-x:hidden;font-size:16px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");background-size:200px 200px;}
 img{max-width:100%;display:block;}
 a{text-decoration:none;color:inherit;}
 
@@ -684,6 +684,21 @@ button{outline:none;border:none;}
 .about-text-inner p{margin-bottom:12px;}
 .about-text-inner p:last-child{margin-bottom:0;}
 
+
+/* ===== PAPER TEXTURE ===== */
+.paper{position:relative;}
+.paper::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  opacity:0.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+}
+.paper > *{position:relative;z-index:1;}
+
 /* scroll fade-in */
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
 .fade-in.visible{opacity:1;transform:translateY(0);}
@@ -781,7 +796,7 @@ button{outline:none;border:none;}
 
 <div style="position:relative;overflow:hidden;">
 <div class="cloud-deco cloud-3" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;top:10%;left:3%;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg" style="width:80px;display:block;"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div><div class="cloud-deco cloud-7" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;top:5%;right:-1%;"><svg viewBox="0 0 198.9 90.1" xmlns="http://www.w3.org/2000/svg" style="width:160px;display:block;"><path d="M142.2,47.3c0-18.8-15.3-34.1-34.1-34.1-8.2,0-15.7,2.9-21.6,7.6C77.8,8.2,63.5,0,47.2,0,21.1,0,0,21.1,0,47.2v13c0,16.5,13.4,29.9,29.9,29.9h139.1c16.5,0,29.9-13.4,29.9-29.9,0,0,0-11.9-56.7-12.9Z" fill="#fff"/></svg></div><div class="cloud-deco cloud-11" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;bottom:5%;left:45%;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg" style="width:60px;display:block;"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div>
-<div class="stats bg-warm fade-in" style="position:relative;z-index:1;">
+<div class="stats bg-warm fade-in paper" style="position:relative;z-index:1;">
   <div class="stat"><div class="stat-num">3</div><div class="stat-label">triedy</div></div>
   <div class="stat"><div class="stat-num">2,5–6</div><div class="stat-label">vek detí (roky)</div></div>
   <div class="stat"><div class="stat-num">15+</div><div class="stat-label">aktivít & krúžkov</div></div>
@@ -797,7 +812,7 @@ button{outline:none;border:none;}
 <!-- ===========================
      SERVICES
 =========================== -->
-<section class="section bg-blue-pale" id="sluzby" style="position:relative;overflow:visible;">
+<section class="section bg-blue-pale paper" id="sluzby" style="position:relative;overflow:visible;">
     
     <!-- CLOUD DECORATIONS SERVICES -->
     <div class="cloud-deco cloud-4" style="position:absolute;top:5%;right:-1%;width:180px;opacity:0.4;pointer-events:none;z-index:0;"><svg viewBox="0 0 198.9 90.1" xmlns="http://www.w3.org/2000/svg"><path d="M142.2,47.3c0-18.8-15.3-34.1-34.1-34.1-8.2,0-15.7,2.9-21.6,7.6C77.8,8.2,63.5,0,47.2,0,21.1,0,0,21.1,0,47.2v13c0,16.5,13.4,29.9,29.9,29.9h139.1c16.5,0,29.9-13.4,29.9-29.9,0,0,0-11.9-56.7-12.9Z" fill="#fff"/></svg></div>
@@ -836,7 +851,7 @@ button{outline:none;border:none;}
 <!-- ===========================
      WHY US
 =========================== -->
-<section class="section bg-warm" style="position:relative;">
+<section class="section bg-warm paper" style="position:relative;">
   <div class="cloud-deco cloud-6" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;top:8%;left:-1%;"><svg viewBox="0 0 218.2 104.9" xmlns="http://www.w3.org/2000/svg" style="width:170px;display:block;"><path d="M126.1,13.2c-8.2,0-15.7,2.9-21.6,7.6C95.8,8.2,81.5,0,65.2,0,39.1,0,18,21.1,18,47.2c0,1.3,0,2.5.1,3.8C7.8,53,0,61.8,0,72.5c0,9.6,6.2,17.5,14.8,21.3,5.6,2.5,12.1,3.5,18.9,3,5.4,5,12.6,8.1,20.5,8.1h134.1c16.5,0,29.9-13.4,29.9-29.9v-15.9c0-23-5.7-45.1-92.1-45.9Z" fill="#fff"/></svg></div><div class="cloud-deco cloud-3" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;top:15%;right:2%;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg" style="width:90px;display:block;"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div><div class="cloud-deco cloud-9" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;bottom:5%;right:-1%;"><svg viewBox="0 0 198.9 90.1" xmlns="http://www.w3.org/2000/svg" style="width:140px;display:block;"><path d="M142.2,47.3c0-18.8-15.3-34.1-34.1-34.1-8.2,0-15.7,2.9-21.6,7.6C77.8,8.2,63.5,0,47.2,0,21.1,0,0,21.1,0,47.2v13c0,16.5,13.4,29.9,29.9,29.9h139.1c16.5,0,29.9-13.4,29.9-29.9,0,0,0-11.9-56.7-12.9Z" fill="#fff"/></svg></div><div class="cloud-deco cloud-5" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;bottom:8%;left:35%;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg" style="width:70px;display:block;"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div>
   <div class="section-inner" style="position:relative;z-index:1;">
   <div class="section-center fade-in">
@@ -863,7 +878,7 @@ button{outline:none;border:none;}
 <!-- ===========================
      SCHEDULE + ZVEDAVA
 =========================== -->
-<section class="section bg-green-pale" id="program" style="position:relative;overflow:visible;">
+<section class="section bg-green-pale paper" id="program" style="position:relative;overflow:visible;">
     <div class="cloud-deco cloud-4" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;top:5%;right:-1%;"><svg viewBox="0 0 198.9 90.1" xmlns="http://www.w3.org/2000/svg" style="width:180px;display:block;"><path d="M142.2,47.3c0-18.8-15.3-34.1-34.1-34.1-8.2,0-15.7,2.9-21.6,7.6C77.8,8.2,63.5,0,47.2,0,21.1,0,0,21.1,0,47.2v13c0,16.5,13.4,29.9,29.9,29.9h139.1c16.5,0,29.9-13.4,29.9-29.9,0,0,0-11.9-56.7-12.9Z" fill="#fff"/></svg></div><div class="cloud-deco cloud-8" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;top:40%;left:1%;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg" style="width:80px;display:block;"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div><div class="cloud-deco cloud-2" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;bottom:6%;right:2%;"><svg viewBox="0 0 218.2 104.9" xmlns="http://www.w3.org/2000/svg" style="width:150px;display:block;"><path d="M126.1,13.2c-8.2,0-15.7,2.9-21.6,7.6C95.8,8.2,81.5,0,65.2,0,39.1,0,18,21.1,18,47.2c0,1.3,0,2.5.1,3.8C7.8,53,0,61.8,0,72.5c0,9.6,6.2,17.5,14.8,21.3,5.6,2.5,12.1,3.5,18.9,3,5.4,5,12.6,8.1,20.5,8.1h134.1c16.5,0,29.9-13.4,29.9-29.9v-15.9c0-23-5.7-45.1-92.1-45.9Z" fill="#fff"/></svg></div><div class="cloud-deco cloud-12" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;bottom:12%;left:40%;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg" style="width:65px;display:block;"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div>
     <div class="section-inner" style="position:relative;z-index:1;"><div class="two-col fade-in">
     <div>
@@ -913,7 +928,7 @@ button{outline:none;border:none;}
 <!-- ===========================
      GALLERY
 =========================== -->
-<section class="gallery-section bg-blue-pale" id="galeria" style="position:relative;">
+<section class="gallery-section bg-blue-pale paper" id="galeria" style="position:relative;">
   <!-- CLOUD DECORATIONS GALLERY -->
   <div class="cloud-deco cloud-10" style="position:absolute;top:8%;right:2%;width:160px;opacity:0.4;pointer-events:none;z-index:0;"><svg viewBox="0 0 198.9 90.1" xmlns="http://www.w3.org/2000/svg"><path d="M142.2,47.3c0-18.8-15.3-34.1-34.1-34.1-8.2,0-15.7,2.9-21.6,7.6C77.8,8.2,63.5,0,47.2,0,21.1,0,0,21.1,0,47.2v13c0,16.5,13.4,29.9,29.9,29.9h139.1c16.5,0,29.9-13.4,29.9-29.9,0,0,0-11.9-56.7-12.9Z" fill="#fff"/></svg></div>
   <div class="cloud-deco cloud-7" style="position:absolute;bottom:15%;left:0%;width:100px;opacity:0.4;pointer-events:none;z-index:0;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div>
@@ -957,7 +972,7 @@ button{outline:none;border:none;}
 <!-- ===========================
      TESTIMONIALS
 =========================== -->
-<section class="section bg-sky" style="position:relative;">
+<section class="section bg-sky paper" style="position:relative;">
   <div class="cloud-deco cloud-10" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;top:6%;left:-2%;"><svg viewBox="0 0 198.9 90.1" xmlns="http://www.w3.org/2000/svg" style="width:190px;display:block;"><path d="M142.2,47.3c0-18.8-15.3-34.1-34.1-34.1-8.2,0-15.7,2.9-21.6,7.6C77.8,8.2,63.5,0,47.2,0,21.1,0,0,21.1,0,47.2v13c0,16.5,13.4,29.9,29.9,29.9h139.1c16.5,0,29.9-13.4,29.9-29.9,0,0,0-11.9-56.7-12.9Z" fill="#fff"/></svg></div><div class="cloud-deco cloud-7" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;top:20%;right:3%;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg" style="width:85px;display:block;"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div><div class="cloud-deco cloud-6" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;bottom:4%;left:30%;"><svg viewBox="0 0 218.2 104.9" xmlns="http://www.w3.org/2000/svg" style="width:140px;display:block;"><path d="M126.1,13.2c-8.2,0-15.7,2.9-21.6,7.6C95.8,8.2,81.5,0,65.2,0,39.1,0,18,21.1,18,47.2c0,1.3,0,2.5.1,3.8C7.8,53,0,61.8,0,72.5c0,9.6,6.2,17.5,14.8,21.3,5.6,2.5,12.1,3.5,18.9,3,5.4,5,12.6,8.1,20.5,8.1h134.1c16.5,0,29.9-13.4,29.9-29.9v-15.9c0-23-5.7-45.1-92.1-45.9Z" fill="#fff"/></svg></div><div class="cloud-deco cloud-3" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;bottom:10%;right:1%;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg" style="width:60px;display:block;"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div>
   <div class="section-inner" style="position:relative;z-index:1;">
   <div class="section-center fade-in">
@@ -980,7 +995,7 @@ button{outline:none;border:none;}
 <!-- ===========================
      NEWS
 =========================== -->
-<section class="section bg-warm" id="aktuality" style="position:relative;">
+<section class="section bg-warm paper" id="aktuality" style="position:relative;">
     
     <!-- CLOUD DECORATIONS NEWS -->
     <div class="cloud-deco cloud-2" style="position:absolute;top:5%;right:0%;width:200px;opacity:0.4;pointer-events:none;z-index:0;"><svg viewBox="0 0 218.2 104.9" xmlns="http://www.w3.org/2000/svg"><path d="M126.1,13.2c-8.2,0-15.7,2.9-21.6,7.6C95.8,8.2,81.5,0,65.2,0,39.1,0,18,21.1,18,47.2c0,1.3,0,2.5.1,3.8C7.8,53,0,61.8,0,72.5c0,9.6,6.2,17.5,14.8,21.3,5.6,2.5,12.1,3.5,18.9,3,5.4,5,12.6,8.1,20.5,8.1h134.1c16.5,0,29.9-13.4,29.9-29.9v-15.9c0-23-5.7-45.1-92.1-45.9Z" fill="#fff"/></svg></div>
@@ -1046,7 +1061,7 @@ button{outline:none;border:none;}
 <!-- ===========================
      CONTACT
 =========================== -->
-<section class="section bg-blue-pale" id="kontakt" style="position:relative;">
+<section class="section bg-blue-pale paper" id="kontakt" style="position:relative;">
   <div class="cloud-deco cloud-5" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;top:5%;right:-1%;"><svg viewBox="0 0 218.2 104.9" xmlns="http://www.w3.org/2000/svg" style="width:160px;display:block;"><path d="M126.1,13.2c-8.2,0-15.7,2.9-21.6,7.6C95.8,8.2,81.5,0,65.2,0,39.1,0,18,21.1,18,47.2c0,1.3,0,2.5.1,3.8C7.8,53,0,61.8,0,72.5c0,9.6,6.2,17.5,14.8,21.3,5.6,2.5,12.1,3.5,18.9,3,5.4,5,12.6,8.1,20.5,8.1h134.1c16.5,0,29.9-13.4,29.9-29.9v-15.9c0-23-5.7-45.1-92.1-45.9Z" fill="#fff"/></svg></div><div class="cloud-deco cloud-11" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;top:30%;left:1%;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg" style="width:75px;display:block;"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div><div class="cloud-deco cloud-8" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;bottom:8%;right:2%;"><svg viewBox="0 0 198.9 90.1" xmlns="http://www.w3.org/2000/svg" style="width:130px;display:block;"><path d="M142.2,47.3c0-18.8-15.3-34.1-34.1-34.1-8.2,0-15.7,2.9-21.6,7.6C77.8,8.2,63.5,0,47.2,0,21.1,0,0,21.1,0,47.2v13c0,16.5,13.4,29.9,29.9,29.9h139.1c16.5,0,29.9-13.4,29.9-29.9,0,0,0-11.9-56.7-12.9Z" fill="#fff"/></svg></div><div class="cloud-deco cloud-2" style="position:absolute;pointer-events:none;opacity:0.4;z-index:0;bottom:5%;left:50%;"><svg viewBox="0 0 74.6 41.8" xmlns="http://www.w3.org/2000/svg" style="width:55px;display:block;"><path d="M50.3,5.3c-3.3,0-6.2,1.1-8.6,3C38.2,3.3,32.5,0,26,0,15.7,0,7.2,8.4,7.2,18.8v1.5c-4.1.8-7.2,4.3-7.2,8.6,0,3.8,2.5,7,5.9,8.5,2.2,1,4.8,1.4,7.5,1.2,2.2,2,5.1,3.2,8.2,3.2h41.1c6.6,0,11.9-5.3,11.9-11.9,0-16.2-8.4-24.6-24.3-24.6Z" fill="#fff"/></svg></div>
     <div class="section-center fade-in">
     <span class="label">Navštívte nás</span>
@@ -1071,7 +1086,7 @@ button{outline:none;border:none;}
             <div class="contact-sub">kliknutím zavoláte</div>
           </div>
       </a>
-      <a class="contact-card green" href="mailto:info@skolka-vcielka.sk">
+      <a class="contact-card green" href="/cdn-cgi/l/email-protection#a0c9cec6cfe0d3cbcfcccbc18dd6c3c9c5cccbc18ed3cb">
           <div class="contact-icon">✉️</div>
           <div class="contact-body">
             <div class="contact-label">E-mail</div>
@@ -1133,7 +1148,7 @@ button{outline:none;border:none;}
       <h4>Kontakt</h4>
       <span class="footer-link">Sečovská 144/3, Ružinov</span>
       <a href="tel:0918607935" class="footer-link">0918 607 935</a>
-      <a href="mailto:info@skolka-vcielka.sk" class="footer-link">info@skolka-vcielka.sk</a>
+      <a href="/cdn-cgi/l/email-protection#8ce5e2eae3ccffe7e3e0e7eda1faefe5e9e0e7eda2ffe7" class="footer-link"><span class="__cf_email__" data-cfemail="87eee9e1e8c7f4ece8ebece6aaf1e4eee2ebece6a9f4ec">[email&#160;protected]</span></a>
       <span class="footer-link">Po–Pia: 7:00 – 17:00</span>
     </div>
   </div>
@@ -1181,7 +1196,7 @@ button{outline:none;border:none;}
   <button class="lightbox-next" id="lbNext">&#8250;</button>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.addEventListener('DOMContentLoaded',function(){
 // ===== MOBILE MENU =====
 const burger=document.getElementById('burger');
@@ -1637,11 +1652,4 @@ document.addEventListener('DOMContentLoaded', function(){
   const lbNext = document.getElementById('lbNext');
   const lbClose = document.getElementById('lbClose');
   const lb = document.getElementById('lightbox');
-  if(lbPrev) lbPrev.addEventListener('click', e=>{e.stopPropagation();lbGo(-1);});
-  if(lbNext) lbNext.addEventListener('click', e=>{e.stopPropagation();lbGo(1);});
-  if(lb) lb.addEventListener('click',e=>{if(e.target===lb)closeLightbox();});
-  if(lbClose) lbClose.addEventListener('click',closeLightbox);
-});
-</script>
-</body>
-</html>
+  if(lbPrev) lbPrev.addEventListener('cli
